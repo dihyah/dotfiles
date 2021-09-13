@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kauress JS</title>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css" integrity="sha512-F7WyTLiiiPqvu2pGumDR15med0MDkUIo5VTVyyfECR5DZmCnDhti9q5VID02ItWjq6fvDfMaBaDl2J3WdL1uxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1 class="text-center" style="padding-top:20%">Kauress JS Exercises</h1>
+</body>
+<script>
+
+    //button toggler
+    var italic = document.getElementsByClassName("btn")[0];
+    console.log(italic);
+    // write some code inside the cb function to change toggle the color of the button
+    italicButton.addEventListener("click", function(){
+      italic.style.backgroundColor = "green";
+    })
+
+    function randomNum(){
+      //declare variable which is the counter
+       var counter = 1;
+      //structure while loop
+      while (counter <= 3) {
+        //declare variable which is a reference to the random number
+        var magicNum = Math.floor(Math.random() * 11);
+        //increment the counter variable
+         counter++
+        //log the random number
+         console.log(magicNum);
+        //write it to the HTML page
+        document.write(magicNum);
+      }
+    }
+
+        /*
+        array is an ordered list of elements
+        data structure
+        ordering/index starts at position 0
+        object data type
+        typeof object
+        indexing is 0 based
+        1st item -> index 0
+        2nd item -> --> index 1
+        ..
+        */
+        //declaring arrays
+
+        //literal notation
+        let fruitArray = ["mango", "apple", "grapes", "blueberry", "watermelon"];
+        //alert(fruitArray[0])
+        //alert(fruitArray[3])
+        //alert(typeof(fruitArray))
+        //alert(Array.isArray(fruitArray))
+
+        //Array constructor
+        let fruitArray2 = new Array(5);
+        //length of an array
+        //alert(fruitArray.length)
+        //alert(fruitArray2.length);
+         fruitArray2[0] = "strawberry";
+        //alert(fruitArray2[0])
+        //alert(fruitArray2)
+        /*
+        Array literal :
+        1. Create an empty array called items, want to initialize it with 5 values of different data types
+        2. query the length of the items array
+        3. Query the data type of the array such that the boolean true is returned
+
+        new Array():
+
+        1. initialize an array called employeeList and lets say it has 5 values
+        2. Add a string item/value at index 0
+        3. console.log the employeeList array
+
+        */
+
+        //items array 
+        var x;
+        let items = ["table", 100, true, null, {id: 1}, x];
+        //undefined
+        //console.log(items.length);
+        //console.log(Array.isArray(items));//true
+        //console.log(typeof(items)); //object
+
+        // employeeList 
+
+        let employeeList = new Array(5);
+        employeeList[0] = "Reno";
+        //console.log(employeeList);
+
+        //Array.of()
+        //contains values passed to it 
+        let anotherArray =  Array.of(1,2,3, "dog");
+        //console.log(anotherArray);
+
+        /* What's the difference between Array.of() and new Array()*/
+        //Array can have mixed data type
+
+        let mixedArray = ["#food", true, null, function(){alert("hello")}, {name:"Liza"}];
+
+        //Array properties
+
+        //Length: number of items in an array, starts at number 1
+        //index: positioning of items in an array starts at number 0
+        //2 ^ 32
+
+        let flexibleArray = [1, true, 300, "snickers", 5, "hi"];
+        //debug this 
+        flexibleArray[6] = false;
+        let flexibleArrayLength = flexibleArray.length; 
+        console.log(flexibleArrayLength + "work");
+
+        //loop over arrays
+
+        function arrayDetails(arr){
+          
+          for(let i = 0; i < arr.length; i++){
+            console.log(arr[i])
+          }
+          console.log(arr.length + "Array length")
+        }
+
+        let myStuff = [1, 2, 5, 300, "chocolate"];
+        arrayDetails(flexibleArray);
+
+
+        // loop over this array
+
+        let coolArr = [1,2,"candy", "rocko", false];
+        //loop over coolArr
+
+        for(var i = 0; i < coolArr.length; i++){
+          console.log(coolArr[i]);
+        }
+
+        let fixedItems2 = new Array(3);
+        console.log(fixedItems2.length);
+        fixedItems2= ["good", 1, 2, 3];
+        console.log(fixedItems2.length);
+        arrayDetails(fixedItems2);
+
+        //constructor property of an array 
+        /*
+        the built in array constructor function will "construct" or make your array instance
+        */
+        let characters = ["tom nook", "isabelle", "barbella", "bubbles"];
+        console.log(characters.constructor);
+
+        //prototype property 
+
+        Array.prototype.name= "Simplez";
+        let numberArr = [100, 200, 300, 400];
+        console.log(numberArr.name); 
+
+        //Array methods
+
+        /*
+        Array prototype object has many methods that you can use
+        on YOUR OWN array
+        */
+
+        // Adding an element to an array
+        //push 
+
+        let students = ["tom nook", "mario", "deadpool", "king kong"];
+        //students[4] = "superman";
+        //alert(students)
+        //push()
+        students.push("superman", "cat", "meow");
+        //alert(students)
+        //alert(students.length)
+
+        //unshift()
+        students.unshift(400);
+        //alert(students.length)
+
+        /*
+        declare an array with 5 vaues (of any type)
+        use the push() to add the values: "a", "b" and "c"
+        use the unshift() to add the values "z" and "okay"
+        then iterate through the array logging to the console 
+        the value of the array item at the specific iteration/i 
+        */
+
+        let anotherArr = [1, true, "str", "num", 100];
+        anotherArr.push("a", "b", "c");
+        anotherArr.unshift("z", "okay");
+        //alert(anotherArr)
+        for(let i = 0; i < anotherArr.length; i++){
+          console.log(anotherArr[i])
+        }
+
+        /*
+        splice(1st arg, 2nd arg, 3rd arg)
+        1: it is the index at which you add items
+        2: the # of items you want to remove from your array
+        3: the elements/value you want to add
+        */
+
+        let someArr = ["soup", "kool", "pie", "mango", "orion"];
+        someArr.splice(2, "sabrina", "kay");
+        //alert(someArr); 
+        /*
+        declare an array called arr100
+        add the numbers 1,2,3,4,5
+        splice the array such that:
+         - you add the numbers 6 and 7 at index 1
+         - remove no items 
+         practice with different insertion indices/points
+          - index 3
+          - index 0 
+        */
+
+        let arr100 = [1,2,3,4,5];
+        arr100.splice(3,0, 6, 7);
+        //alert(arr100)
+        //concat() --> push() --> insert elements at the end of an array
+
+        let list = ["apple", "banana", "cantaloupe", "durian","eggplant"];
+        let modifiedList = list.concat("blueberries","mango");
+        console.log(modifiedList);
+
+        let numArray1 = [100,200,300,400];
+        let numArray2 = numArray1.concat([500,600,700])
+        console.log(numArray2); 
+
+        /*
+        let myClasses = ["eng", "math", "art", "gym", "science", "coding"];
+        1.use splice on myClasses to add "history" at index 4
+          remove no items from the myClasses array
+          
+          --> myClasses.splice(4,0,"history");
+          
+          2. use splice on myClasses to add "history" at index 2
+             remove one item from the myClasses array 
+             
+             --> myClasses.splice(2,1,"history");
+             
+          let alphabets = ["a", "b", "c", "d", "e"];
+          use concat on alphabets to add "f" , "g", "h" and "i"
+          
+          --> let modifiedAlphabets = alphabets.concat("f" , "g", "h", "i");
+
+        let langz = ["python", "javascript", "C#", "c++"]
+              use concat to add ["unity", "unreal", "typescript"] to langz
+              let moreLangz = langz.concat(["unity", "unreal", "typescript"]);
+        */
+
+        /*
+        Bonus question:
+        make 5 empty divs
+        in JS make 5 image elements and add a src attribute and value 
+        for each image element
+        append the 5 image elements randomly to the image divs 
+        - can use Math.float and Math.random()
+
+        */
+
+        var prices = [9.99, 14.75, 13.99, 99.99, 79.98];
+
+        //forEach to return the discount price of each value after 15% discount
+        prices.forEach(function(item, index){
+          var discount = .15;
+          console.log(`item: ${item - (item * discount)} index: ${index}`);
+        })
+
+        //2021/04/17
+        /*
+        1. key: v alues
+        2. methods
+        */
+        //object literal notation
+        let user = {
+          id: 1,
+          enrolled: true,
+          tuition: 1000,
+          message: function(){
+            console.log("The user is enrolled");
+          }
+        }
+        //accessing properties of an object
+        console.log(user.id);
+        console.log(user.tuition);
+        //calling a method --> called a function funcName()
+        user.message();
+        //Object.hasOwnProperty()
+        console.log(user.hasOwnProperty('snacks'));
+        //add properties with the . notation 
+
+        let user2 = {};
+        user2.id = 2;
+        user2.enrolled = true;
+        user2.tuition = 1000;
+        user2.message = function(){
+          console.log("This is user 2")
+        }
+        //deleting properties
+        delete user2.enrolled;
+        user2.enrolled = true;
+        user2.tuition = 2000;
+        console.log(user2);
+
+        /*
+
+        use the object literal notation to declare an object called author
+        must have 3 p: value pairs : name, genre, year
+        must have 1 method called introduction which prints out some message
+        call the introduction() method
+
+        */
+
+        let author = {
+          authorname: "Rocko",
+          genre: "fantasy",
+          year: 2021,
+          introduction: function(){
+            console.log("the name is " + this.authorname + "and the genre is " + this.genre)
+          }
+        }
+        author.introduction();
+        console.log(author.authorname);
+
+        //Object literal enhancement
+        //intiliaze an objects properties based on a variable and its value
+
+        let id = 100;
+        let enrolled = true;
+        let tuition = 1000;
+        let message = function(){
+          console.log("something")
+        }
+
+        let user3 = {
+          id,
+          enrolled,
+          tuition,
+          message
+        }
+
+        console.log(user3.id)
+
+        /*
+        use object literal enhancement 
+        let role = "frontend";
+        let employed = "true";
+        let vacation = "89";
+        let message = function(){
+        console.log(`${role} position has ${vacation} days`)
+        //console.log(role + "this position has" + vacation)
+        }
+
+        */
+        let role = "frontend";
+        let employed = "true";
+        let vacation = "89";
+        let message1 = function(){
+        console.log(`${role} position has ${vacation} days`)
+        //console.log(role + "this position has" + vacation)
+        }
+        let dev =  {
+          role,
+          employed,
+          vacation,
+          message1
+        }
+        console.log(dev);
+        dev.message1();
+        // new() keyword
+        /*
+        let employee = new Object();
+        console.log(typeof(employee));
+        employee.id = 193834;
+        employee.role = "admin";
+        employee.salary = 10000;
+        employee.raise = employee.salary * 2;
+        */
+        /*
+        user the new keyword to instantiate an object called randomNumber
+        using the object constructor function
+        add a property called luckydraw whose value is the boolean true
+        add a method called value which generate a random number between 0 - 10
+        Math.floor(Math.random() * 11)
+        then call value method on the randomNumber object
+
+        */
+
+        let randomNumber = new Object();
+        randomNumber.luckydraw = true;
+        randomNumber.value = function(){
+          console.log(Math.floor(Math.random() * 11));
+        }
+        console.log(randomNumber.luckydraw);
+        randomNumber.value();
+
+        //User defined object constructor function 
+
+        function EmployeeConstructor(id, role, salary, raise){
+          this.id = id;
+          this.role = role;
+          this.salary = salary;
+          this.raise = this.salary * 2;
+          
+        }
+        let employee1 = new EmployeeConstructor(1, "admin", 100);
+        console.log(employee1.raise);
+        let employee2 = new EmployeeConstructor(2, "dev", 134);
+        let employee3 = new EmployeeConstructor(3, "manager", 134);
+        console.log(employee3);
+
+        //2021/04/21
+        var food = {
+          foodName: "Minimart",
+          foodLocations: ['Vancouver', 'Brunei', 'Orlando']
+        }
+
+        var hardware = {
+          hardwareName: "Supermax Hardware",
+          hardwareLocations: ['Cairo']
+        }
+
+        var clothing = {
+          clothName: "Cloth mania",
+          clothLocations: ['Vietnam', 'Jakarta']
+        }
+
+        var superstore = Object.assign({}, food, hardware, clothing);
+        console.log(Object.entries(superstore));
+
+        class Player {
+          constructor(name, level, power, energy){
+            this.name = name;
+            this.level = level;
+            this.power = power;
+            this.energy = energy;
+          } 
+          powerControl(){
+            return(`${this.name}'s remaining power is ${this.power - this.energy}.`);
+          }
+        }
+
+        var ryu = new Player("Ryu", 1, 500, 100);
+        console.log(ryu.powerControl());
+
+        var object = {
+          id: 1,
+          type: "simple",
+          level: 10,
+          status: true
+        }
+
+        /*
+        for (key in object){
+          console.log(object[key])
+        }
+        */
+
+        console.log(object);
+        console.log(Object.values(object));
+        console.log(Object.entries(object));
+
+        var furniture = {
+          unit: "table",
+          id: 48947578,
+          price: 29.99
+        }
+
+        console.log(furniture);
+        for (key in furniture){
+          console.log(furniture[key]);
+        }
+        console.log(Object.values(furniture));
+        console.log(Object.entries(furniture));
+
+        //2021/04/21
+        /*
+        execution context: info about the enviornment within which the currenty block code is being executed
+        thiS is a reference to some object
+        func declaration doesn't matter, how a function is called is wghat matter
+        4 ways of determining the value of the this keyword
+        */
+
+        function globalContext(){
+          console.log(this)
+        }
+        globalContext()
+
+        //implicit binding: Object method
+         var person1 = {
+           id: 1,
+           miles: 1000,
+           greeting: function(){
+             console.log("Hello you have: " + this.miles + "miles")
+           }
+         }
+         person1.greeting();
+            var miles = 50;
+            person1.miles = miles;
+            var personGreeting = person1.greeting;
+            person1.greeting();
+
+            //new binding
+
+        function fun(miles){
+          this.airlines = "Dodo",
+          this.miles = miles,
+          this.greeting = function(){
+            console.log(`Hello you have ${this.miles} miles`)
+          }
+        }
+        var person2 = new fun(30);
+        person2.greeting();
+        //dom event handler
+
+        var button = document.createElement('button');
+        button.innerHTML = "Click";
+        document.body.appendChild(button);
+
+        button.addEventListener("click", function(){
+          console.log(this)
+        })
+
+        /*
+
+        1. Explain this keyword in JavaScript
+
+        2. function log(){
+        console.log(this)
+        }
+        log()
+        --> What will be the value of this be?
+
+        */
+        //Explicit Binding with call(), bind() and apply()
+
+        //call()
+        // call() sedt the value of this inside the functiuon and execute it immediately
+
+        function greeting(points, bells){
+          console.log(`You are at the ${this.level} level in the game. You have ${points} points and ${bells} bells`)
+        }
+
+        var merengue = {
+          level: "Intermediate",
+          points: 50,
+          bells: 1000
+        }
+
+        greeting.call(merengue, 50, 1000)
+
+        //apply() method
+        function greeting(message, mood){
+          console.log(` ${message} You are at the ${this.level} level in the game. You have ${this.points} points and ${this.bells} bells. Hopefully youre in a ${mood} mood`)
+        }
+
+        greeting.apply(merengue, ['Hi there', 'happy'])
+
+        //bind() method
+        var user1 = greeting.bind(merengue, 'Hello there', 5000, 10000);
+        user1();
+
+        function rate(name, stars, cuisine){
+          console.log(`Welcome to ${this.program}. We have ${name} restaurant that has ${stars} stars and serve ${cuisine} cuisines.`)
+        }
+
+        var restaurant = {
+          program: 'restaurate'
+        }
+
+        rate.call(restaurant, 'Gordons', 5, 'Western');
+
+        function powerRate(name, points){
+          console.log(`Welcome to ${this.program}! Today's participant is ${name} with ${points} points this summer.`)
+        }
+
+        var participant = {
+          program: 'Super League'
+        }
+
+        powerRate.apply(participant, ['Bruce Lee', 400])
+        powerRate.apply(participant, ['Chuck Norris', 399])
+
+
+        //2021/04/21
+        //function as an object
+
+        function simple(){
+          console.log('hi');
+        }
+        console.log(typeof(simple));//function object
+        console.log(simple.name);//simple 
+        console.log(simple.length);//0
+        simple.item = "basic";
+        console.log(simple.item);//basic
+        //add a method
+        simple.numGen = function(){
+          let randomNum = Math.random();
+          return randomNum;
+          console.log(randomNum)
+        }
+        simple.numGen();
+
+        function sum(x,y,z){
+          return(x + y + z);
+          console.log(x + y + z);
+        }
+        //sum(100, 80, 90, 100);//270
+        sum(100,80);//NaN  100 + 80 + undefined
+
+        var x = 1;
+        var y = 2;
+        var z;
+        console.log(x + y + z)
+
+        //arguments parameter
+
+        function game(x, y){
+          console.log(arguments.length);
+        }
+        game("WOw", "mARIO"); //2
+
+        function odd(x){
+          x % 2 === 0 ? console.log("Even") :
+          console.log("Odd");
+        }
+
+        odd(1);
+
+        function client([a, b, c], [x, y]){
+          console.log(arguments.length);
+          for (var i = 0; i < arguments.length; i++)
+            console.log(arguments[i])
+        }
+
+        client("Alice", "Bob", "Charlie", "Dom", "Elliot", "Fafnir");
+
+        //swap function
+        function swap(a, b){
+          [a, b] = [b, a]; //perma swap
+            //return [b, a]; //tempo swap
+          console.log(a, b);
+        }
+
+        swap(1, 2);
+
+        //function expressions
+        var multiply = function(x, y, z){
+          return(x * y * z);
+        }
+
+        multiply(2, 10, 20);
+
+        //IIFE immediately-invoke function expressions
+        (function(){
+          console.log("IIFE.")
+        })();
+
+        (function IFFE(a, b){
+          console.log(a + b);
+        })(1, 2);
+
+        var person = "Alice";
+        (function log(){
+          return person = "Bobby";
+          console.log(person);
+        })("Alice");
+
+
+        //2021/04/23 callback function
+        setTimeout((function(){
+          console.log("This statement is executed after one second.")
+        }), 1000);
+
+        setInterval((function(){
+          console.log("This statement is executed after one second interval.")
+        }), 1000);
+
+        function mainFunc(item1, item2, callback){
+          console.log(`I like eating ${item1} and ${item2}.`);
+          callback();
+        }
+
+        mainFunc('chocolate', 'ice-cream', function(){
+          console.log("Do you have some?");
+        })
+
+        function mainFunction(callback){
+          callback();
+        }
+
+        function text(){
+          console.log("This text is from within the 'text' function passed as a callback.")
+        }
+
+        mainFunction(text);
+
+        document.getElementById('expBtn').addEventListener('click', function() {
+          console.log("Button clicked.");
+        })
+
+        var callbackFunction = function(){
+          console.log("Complete");
+        }
+
+        setTimeout(callbackFunction, 3000)
+
+        function addScore(x, y, callback){
+          var sum = x + y;
+          sum > 100 ? callback() : false;
+        }
+
+        var announcement = function(){
+          console.log("You can go to the next level.");
+        }
+
+        addScore(1, 100, message);
+
+        setTimeout(callbackFunc, 3000);
+
+        function callbackFunc(){
+          console.log("hello")
+        }
+
+        console.log("execute/log this first.")
+
+        function a(x){
+          b(c);
+        }
+
+        function b(y){
+          c();
+        }
+
+        function c(){
+          console.log("hi");
+        }
+        a(b);
+
+        //reverse string chars
+        function reverse(string){
+          var splited = string.split('');
+          var reversed = splited.reverse();
+          var joined = reversed.join('')
+          console.log(joined);
+        }
+
+        reverse("Hello, friend.");
+
+        //2021/04/24 arrow function expression
+        var x = 1;
+        var y = 2;
+
+        var z = (a, b) => a + b;
+        console.log(z(x, y));
+
+        var isPositive = n => n > 0 ? console.log("positive") : console.log ("!positive");
+
+        console.log(isPositive(0));
+
+        var expBtn = document.getElementById('expBtn').addEventListener('click', () => console.log("clicked"));
+
+        //2021/04/26
+        // =>
+        //syntax
+         //let functionName = (arg1, arg2....argN) => statement
+
+        //function expression with no parameters using fat arrow syntax
+        let greeting = () =>("Hello world");
+        console.log(greeting())
+
+        /*
+        let hello = () => ("Hi");
+        let userGreeting =  () => ("Hi user");
+
+        */
+        //single parameter
+
+        let singleVal = (a) => a + 1;
+        console.log(singleVal(100));
+
+        /*
+        let doubleVal = b =>b +2;
+        let tripleVal = (c) => c + 3;
+
+        */
+        //multiple params/arguments 
+        /*
+        function multiply(a,b){
+          return(a * b);
+        }
+        */
+
+        let multiply = (a, b) => {return a * b}
+        console.log(multiply(2,3));
+
+        let nums = (x, y, z) => x + y + z;
+
+        let sumMultiply = (x, y) => {
+          let z = 5;
+          return (x * y) + z;
+        }
+        sumMultiply(2,3);
+
+        //this keyword
+        /*
+        var x; 
+        function nice(){
+         return 6;
+        }
+        x = nice();
+        console.log(x);
+        */
+        /*
+        document.getElementById("btn").addEventListener("click", function(){
+          this.innerText = "Clicked";
+        })
+        */
+
+        document.getElementById("btn").addEventListener("click", () => this.innerText = "clicked");
+
+        /*
+        1. Convert this to an arrow function 
+
+        function employee(hours){
+        return hours;
+        }
+
+        employee(10);
+
+        let employee = (hours) => hours;
+        employee(10)
+
+        2. Convert this to an arrow function 
+
+        function employee2(hours){
+        hours *= 1.5;
+        return hours
+        }
+
+
+        let employee = (hours) => {
+        hours *= 1.5
+        return hours
+        }
+        employee(190)
+        */
+
+        //rest syntax
+        function sum(x,y,z) {
+          return(x + y + z);
+        }
+        sum(100,80, 80, 100);// 260
+
+        function numbers(...parameters){
+          //code statements
+        }
+        function example(a,b,c,...d){
+          console.log(a);
+          console.log(b);
+          console.log(c);
+          console.log(d.length)
+          console.log(arguments.length)
+        }
+        example(1,2,3, 4); 
+
+        function sumNums(...params){
+          let sum  = 0;
+          params.forEach(function(item){
+            sum+= item;
+          });
+          console.log(sum)
+        }
+        sumNums(1,2,3,4,5);
+
+        //refactor  this using rest syntax
+
+        function adder(a,b,c,d,e,f,g,h,i){
+          console.log(arguments.length);
+          for(let i = 0; i <arguments.length; i++){
+            console.log(arguments[i] + arguments[i])
+          }
+        }
+        adder(1,2,3,4,5,6,7,8,9)
+
+        //what happens? if there is an error how can you fix it?
+
+        // Hint: only change the order of the rest param....
+        function workshopAttendees (a,...b,c){
+          return true;
+        }
+
+        //what is the difference between arguments object and rest parameter?
+
+        //2021/05/27
+        //reduce()
+        /*
+        ES5
+        it executes a cb function on each array el and reduces an array to a single value
+        arrayName.reduce(callback, initialValue) - > This is an optional paramater, its the starting value if needed
+
+
+        The callback function can take 4 arg/params
+         - accumalator: This is the total of all of the returned values from the cb function. The value of the accumulator changes after each iteration
+         - value: The current value being processed
+         - index: The current iundex of the value being processed
+        - array: The original arrya that the reduce method is being applied to
+
+        */
+
+        let numberArr = [319000, 820, 10];
+        let reducedArr = numberArr.reduce(function(accumulator, value){
+          return(accumulator + value);
+        }, 100) // 100 +  319000 + 820 + 10
+        console.log(reducedArr); // 319830
+        // multiply all the values in the following array with each other 
+
+        //add all the numbers
+        let arr = [1, 10,10, 2];
+        /*
+        let multipliedArr = arr.reduce(function(acc, value){
+          return acc * value
+        },)
+        console.log(multipliedArr);
+        */
+        let sumArr = arr.reduce(function(acc, value){
+          
+        }, 30)
+
+
+
+        // add
+
+        let kawaiiData = [
+          {
+            username: "Melodrama",
+            village: "Apples landing",
+            points: 1450
+          } ,
+            {
+            username: "Nook",
+            village: "Zeldander",
+            points:100
+          },
+              {
+            username: "Tango",
+            village: "Cactiizilla",
+            points: 7000
+          }  
+        ]
+        let kawaii_points = kawaiiData.reduce(function(acc, value){
+          return acc + value.points;
+        },0)
+        console.log(kawaii_points)
+
+        /*
+        question 1:
+        let arrNum = [10, 70, 89, 8700] sum these values and start with an intial value of 10
+
+
+        question2: calculate the total population of all the cities
+
+        let cities = [
+        {
+        name: "Albuquerque",
+        population: 2304004
+        },
+        {
+        name: "Toronto",
+        population: 547569284
+        },
+        {
+        name: "Kuwait city",
+        population: 39302848
+        },
+        {
+        name: "Vancouver",
+        population: 7834751
+        }
+        ]
+
+
+
+        */
+
+        // filter
+
+
+        /*
+        ES6
+        returns a new array with the filtered elements
+         arrayName.filter(callback, thisArg) --> the value to use as "this"
+        callback function can take 3 params:
+        1. current item: the current item in the arrayt, req
+        2. index: the index of the current item in the array
+        3. array; the array on which the filter will enact/be applied 
+        */
+        let yummies = ["ice-cream", "cupcake", "donut", "cupcake"];
+
+        let filteredYummies = yummies.filter(function(currentItem, index){
+          if(yummies.indexOf(currentItem) === index){
+            return currentItem;
+          }
+        })
+        console.log(filteredYummies);
+
+        /*
+        1.
+        filter the words that have "er in them". Hint :  indexOf, -1 indicates that no words were found in the array
+        let wordArray = ["dog", "pineapple", "letter", "technology", "chatter", "donut"]
+
+        Filter for PC games only  --> return (item.name === "PC")
+
+        2.  let games = [
+
+        {
+        name:"Nintendo",
+        game: "Animal crossing"
+        },
+        {
+        name:"Nintendo",
+        game: "Super Mario"
+        },
+        {
+        name:"PC",
+        game: "Caesar IV"
+        },
+        {
+        name:"Playstation",
+        game: "Grand Theft Auto V"
+        },
+        {
+        name:"Playstation",
+        game: "The Sims 4"
+        }
+
+
+        ]
+        */
+        //farid example check
+
+        let friends = [{
+          name: 'Anna',
+          books: ['Bible', 'Harry Potter'],
+          age: 21
+        }, {
+          name: 'Bob',
+          books: ['War and peace', 'Romeo and Juliet'],
+          age: 26
+        }, {
+          name: 'Alice',
+          books: ['The Lord of the Rings', 'The Shining'],
+          age: 18
+        }]
+
+        //2021/05/28-29
+        /*
+
+
+        Exercises:
+        1. Join these two arrays using the spread operator and reference the result via let resultArray
+        let arrayA = [{num: 1, max: 10}, {num:2, max:100}, {num3: 3, max:450}];
+        let arrayB = [{fruit: 'apple'}, {fruit: 'mango'},{fruit: 'blueberry'}];
+
+        2.Consider the following code and use the map() method to achieve the output of array2 logged to the console:
+        let array1 = [10,20,30,40];
+        let array2 = [];
+        //Your awesome code here!
+        console.log(array2); // [80, 60, 40, 20];
+
+
+        3.	Filter the following data and return users that are of the admin type
+        let userData = [{
+            email: 'user1@hello.com',
+            name: 'user 1',
+            type: 'regular'
+          },
+          {
+            email: 'user2@hello.com',
+            name: 'user 2',
+            type: 'admin'
+          },
+          {
+            email: 'user3@hello.com',
+            name: 'user 3',
+            type: 'admin'
+          },
+          {
+            email: 'user4@hello.com',
+            name: 'user 4',
+            type: 'regular'
+          },
+        ];
+        let keyword = 'admin';
+
+        4.In the following array, filter the prime numbers. A prime number is not divisible by any number other than 1 and by itself:
+        let numbers = [2, 4, 5, 7, 12, 13, 17, 19, 24, 29, 31, 33, 41, 43, 47, 53];
+
+        5. Consider the following array:
+        let words = ['ae', 'baed', 'led', 'ce', 'kaede'];
+        •	Filter the words that have the characters 'ae'
+        •	Map the filtered words to a length > 3
+
+
+        6. Let’s make our own planner for switching over into freelancing using the preceding array. The goal is to find out how much money freelancing makes per week, after all we would want to know that before quitting our day job! :
+        let tasks = [
+         {
+          day: 'Monday',
+          minutes: 480,
+          tasks: 'client work, coding'
+         },
+         {
+          day: 'Tuesday',
+          minutes: 80,
+          tasks: 'reading, coding'
+         },
+          {
+          day: 'Wednesday',
+          minutes:  300,
+          tasks: 'writing, working out'
+         },
+             {
+          day: 'Thursday',
+          minutes:  280,
+          tasks: 'client work, coding'
+         },
+         {
+          day: 'Friday',
+          minutes:  380,
+          tasks: 'client work'
+         },
+         {
+          day: 'Saturday',
+          minutes: 180,
+          tasks: 'coding'
+         },
+         {
+          day: 'Sunday',
+          minutes: 40,
+          tasks: 'reading, working out'
+         },
+        ];
+
+        •	Filter out all the days that have a 'client work' task
+        •	Calculate the number of hours worked on these days
+        •	Filter out the days in which you’ve worked more than 5 hours
+        •	For days that you worked more than 5 hours calculate the total $ amount earned by multiplying the number of hours worked by your hourly rate which is $35
+        •	Return the accumulated $ sum of the hours worked in total
+
+        7. Destructure the following string so that only the last letter 's' is returned:
+        let myName = 'SleepySaurus';
+
+        8.	Destructure the following  nested array:
+        let array1 = ['hello', 'world', [100,200]];
+
+        9. Flatten the following array down to 1 level using the flat() method:
+        let nestedArray = [[0,[1, 2]],3, [9], [10, 12]];
+
+        10. What is the length of the array flowers after deleting flowers[1] ?
+        const flowers = ['Rosa', 'Lillium', 'Tulipa', 'Hyacinthus', 'Chrysanthemum', 'Gladiolus']; delete flowers[1];  
+        (Note : 94 --. this is for me)
+
+
+        11. Calculate the Fibonacci series in JavaScript. This is a series of numbers in which each number ( Fibonacci number ) is the sum of the two preceding numbers. The simplest is the series 1, 1, 2, 3, 5, 8, etc.
+        (NOTE: 100 --> this note is for me)
+
+        12. Code a function to find if a given year passed to it as an argument is a leap year
+        (Note: 4)
+
+        13. innerHTML can increase the possibility of a XSS attack. What is an alternative for setting text?
+
+        14. Code a function so that the even array has only even numbers from the nums array and the odd array only contains odd numbers from the nums array: 
+        let nums = [1,2,34,54,55,34,32,11,19,17,54,66,13];
+        let even = [];
+        var odd = [];
+        (Note: 18)
+
+        15.Create a function which will accept two octal numbers as arguments and return their sum.
+        (Note: 21)
+
+        16. Explain the output of the following: 
+        (function() { 
+        b = 2; 
+        var a = b;
+        })();
+
+        (Note: 23)
+
+        17. Code a small script that takes a phone number as an input. Perform client side validation to check if the phone number is in the correct format for your country e.g. it starts with the correct country and city code and is atleast x digits longs 
+
+        18. Code a small script that will checks if a username is atleast 8 characters long and has  atleast one uppercase and one special character
+         // Class project 
+         
+         • Make a mini browser game
+         • use sprites/png
+         • character movement game like mario 
+         • Keyup and key down method
+         
+        */
+
+        var d = new Date();
+        //console.log("Now: " + d);
+
+        var utc_offset = d.getTimezoneOffset();
+        //console.log("UTC offset: " + utc_offset);
+        d.setMinutes(d.getMinutes() + utc_offset);
+        console.log("UTC: " + d);
+
+        //Mumbai -> 5.5 from UTC
+        var mumbai_offset = 5.5*60;
+        d.setMinutes(d.getMinutes() * mumbai_offset);
+        console.log("Mumbai: " + d);
+
+        pk_9dc299d676b2437bb5d93408f6968c86
+
+        //2021/05/02
+        var car = {};
+
+        var auto = {
+          drive: true,
+          wheels: 4,
+          gears: "automatic"
+        }
+
+        var brand = {
+          brand: "Honda",
+          model: "Civic",
+          displacement: 1.5
+        }
+
+        var car = Object.create(auto);
+
+        //Object.getPrototypeOf(nameOfObject)
+        console.log(Object.getPrototypeOf(car));
+
+        //Prototypal Inheritance
+        /* it is the ability of a prototype to infer/impart/give its properties and methods onto a child object
+        */
+
+        /*setPrototypeOf() method takes 2 arguments: 
+        1) targetObject
+        2) prototype
+        */
+
+        Object.setPrototypeOf(brand, auto);
+        console.log(brand);
+
+
+        var book = {
+
+        educational: true,
+        diagrams: true,
+        author: "J.K",
+        discount: 0,
+        sale: function(){
+        if(this.educational){
+        this.discount = 0.5
+          }
+         }
+        }
+
+        /*- Declare an object called scienceFictionBook and set its educational key to the boolean false 
+        - Set the book object to be the protoype of scienceFictionBook
+        - What is the value of scienceFictionBook.discount?*/
+
+        var scienceFictionBook = {
+          educational: false
+        };
+
+        Object.setPrototypeOf(scienceFictionBook, book)
+        scienceFictionBook.educational = true;
+        console.log(scienceFictionBook.discount);
+
+</script>
+</html>

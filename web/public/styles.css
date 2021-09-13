@@ -1,0 +1,85 @@
+h1, p, strong, div{
+    color:white;
+}
+
+.bg{
+    background-color:purple;
+}
+
+@media (min-width: 600px){
+    body{
+        background-color: purple;
+    }
+}
+
+@media (max-width:599px){
+    body{
+        background-color: orangered;
+    }
+}
+
+#box{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#box > .flexed{
+    background-color:gray;
+    font-size: 20px;
+    margin: 20px;
+    padding: 20px;
+    width: 200px;
+}
+
+#grid{
+    background-color: yellow;
+    display: grid;
+    padding: 20px;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    grid-template-columns: 100px 200px auto;
+}
+
+#grid > .grided{
+    background-color: black;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.wysiwyg > [contenteditable=true],
+.wysiwyg > .contenteditable {
+    display: block;
+    margin:center;
+    font-size: 50px;
+    height: 84vh;
+    outline: none;
+    overflow: scroll; 
+    padding: 0.3rem 0.5rem;
+    word-wrap: break-word;
+}
+
+.wysiwyg > textarea {
+    background: #f9f5ea;
+    font-family: inherit;
+    font-size: inherit;
+    margin:auto;
+    padding: 0;
+    overflow: auto;
+    line-height: inherit;
+    transition: height 0.3s; 
+    box-sizing: border-box;
+    display: block;
+    outline: none;
+    resize: none;
+    border: none;
+    width: 50%;
+    height: 4.13rem;
+    box-shadow: none;
+}
+
+.wysiwyg > textarea :: first-line{
+    fontSize:26;
+    
+}
+
