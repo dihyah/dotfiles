@@ -1,5 +1,5 @@
  " Vanilla configs
-se nu et ai hls bg=dark ls=2 ts=4 sts=4 sw=4 bs=indent,eol,start "cul cuc
+se nu et ai hls bg=dark ls=2 ts=2 sts=2 sw=2 bs=indent,eol,start "cul cuc
 se omnifunc=javascriptcomplete#CompleteJS
 syn on
 
