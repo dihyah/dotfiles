@@ -26,7 +26,14 @@ rl.question(`What is ${num1} + ${num2}? `, input => {
     }
 })
 
+// SIGINT
+rl.on('SIGINT', () => {
+    rl.question("Are you sure you want to exit?(y/N) ", answer => {
+        if (answer.match(/^y(es)?$/i)) rl.pause()
+    })
+})
+
 rl.on('close', () => {
-    console.log("Program ended.")
+    console.log("Exiting program")
     process.exit(0)
 })
