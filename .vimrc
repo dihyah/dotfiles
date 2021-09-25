@@ -8,9 +8,6 @@ if $TERM == "xterm-256color"
   set t_Co=256
 endif
 
-" Set color theme
-colo gruvbox
-
 " Highlight Matched Paren
 autocmd VimEnter * DoMatchParen
 
@@ -52,6 +49,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'flazz/vim-colorschemes'
     Plug 'joshdick/onedark.vim'
 call plug#end()
+
+" Set color theme
+"colo gruvbox
 
 " PLUGIN CONFIGS
 " Rainbow_parentheses
