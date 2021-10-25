@@ -2,9 +2,6 @@
 se nu et ai hls bg=dark ls=2 ts=2 sts=2 sw=2 bs=indent,eol,start "cul cuc
 syn on
 
-" Set color theme
-"colo gruvbox
-
 " Highlight Matched Paren
 autocmd VimEnter * DoMatchParen
 
@@ -38,6 +35,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'flazz/vim-colorschemes'
     Plug 'joshdick/onedark.vim'
 call plug#end()
+
+" Set color theme
+"colo gruvbox
 
 " PLUGIN CONFIGS
 " Rainbow_parentheses
