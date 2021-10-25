@@ -11,7 +11,7 @@ hi MatchParen cterm=bold ctermbg=green ctermfg=blue
 " Undo break points
  inoremap , ,<c-g>u
  inoremap . .<c-g>u
- inoremap ! ! <c-g>u
+ inoremap \! ! <c-g>u
  inoremap ? ?<c-g>u
  inoremap [ [<c-g>u
 
