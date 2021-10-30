@@ -2,12 +2,6 @@
 se nu et ai hls bg=dark ls=2 ts=2 sts=2 sw=2 bs=indent,eol,start "cul cuc
 syn on
 
-" Highlight Matched Paren
-autocmd VimEnter * DoMatchParen
-
-" Highlight brackets
-hi MatchParen cterm=bold ctermbg=green ctermfg=blue
-
 " Undo break points
  inoremap , ,<c-g>u
  inoremap . .<c-g>u
