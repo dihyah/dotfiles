@@ -98,15 +98,82 @@ while :; do
   echo "This is Bash."
   sleep 1
 done
+
+#until-loop
+max=5
+a=1
+b=0
+
+until [[ $a -gt $max || $b -gt $max ]]; do
+  echo "a = $((a++)) & b = $((b++))."
+done
+
+#string comparison
+str1="Hello"
+str2="hello"
+
+if [[ -n $str1 || -n $str2 ]]; then
+  if [ $str1 \< $str2 ]; then
+    echo "$str1 is less then $str2"
+  else
+    echo "$str1 is not less then $str2"
+  fi
+else
+  echo String is empty.
+fi
+
+#string length
+str3="Hello, world!"
+str3len0=`expr length "$str3"`
+str3len1=`expr "$str3" : '.*'`
+str3len2=`echo $str3 | wc -c`
+str3len3=`echo $str3 |awk '{print length}'`
+
+echo "expr length \"\$str3\":" $str3len1
+echo "expr \"$str3\" : '.*':" $str3len2
+echo $str3 | wc -c
+echo "\$str3 |awk '{print length}':" $str3len3
+
+#string split with IFS variable
+read -p "Enter any word seperated by space: " str4 #reading string
+
+IFS=' ' #set space as delimiter(-r for backslash, -a for passing into index)
+read -ra ARR<<<"$str4" #reading str as an array as tokens seperated by IFS
+
+for s in "${ARR[@]}"; do #access each element of array
+  echo -n "s: $s "
+done
+echo
+
+#string split without IFS
+read -p "Enter any string seperated by space: " str5 #reading string value
+
+readarray -d ' ' strarr<<<"$str5" #split string based on the delimiter ' '
+
+#print each value of array with the help of loop
+for (( n=0; n<=${#strarr[*]}; n++ )); do
+  echo -n ${strarr[n]}
+done
+echo
+
+#split string by another string
+str6="ThisHereisHereBashHereScript"
+delimiter='Here'
+s=$str6$delimiter
+array=()
+
+while [[ $s ]]; do
+  echo $s
+  array+=( "${s%%"$delimiter"*}" )
+  s=${s#*"$delimiter"}
+done
+declare -p array
 '
 
-echo Countdown for website deployment...
-k=10
-while [ $k -ge 1 ]; do
-  if [ $k -eq 2 ]; then
-    echo Mission aborted, some technical error found.
-    break
-  fi
-  echo -n $(( k-- ))' '
-  sleep 1
+#Example to split a string using trim (tr) command
+my_str="We;welcome;you;on;javatpoint."
+my_arr=($(echo $my_str | tr ; \n))
+
+for i in "${my_arr[@]}"; do
+  echo $i
 done
