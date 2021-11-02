@@ -1,1 +1,1 @@
-# Configuration files
+# Configuration and test files
