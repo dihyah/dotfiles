@@ -65,10 +65,48 @@ case $OS in
         echo "Sounds interesting. I will try that."
         ;;
 esac
-'
 
-#for-loop
-for i in {1..10..2}; do
+#for-loops
+for i in {1..50..2}; do
+  if [[ $i -gt 10 && $i -lt 40 ]]; then
+    continue
+  fi
   echo -n $i' '
 done
 echo
+
+j=1;
+for ((;;)); do
+  echo "Current number: $((j++))"
+  sleep 1
+  if [[ $j -eq 10 ]]; then
+    break
+  fi
+done
+
+#while-loops
+read -p "Enter starting number: " begin
+read -p "Enter ending number: " end
+
+while [[ $begin -lt $end || $begin -eq $end ]]; do
+  echo -n $((begin++))' '
+  sleep 1
+done
+echo ", Completed."
+
+while :; do
+  echo "This is Bash."
+  sleep 1
+done
+'
+
+echo Countdown for website deployment...
+k=10
+while [ $k -ge 1 ]; do
+  if [ $k -eq 2 ]; then
+    echo Mission aborted, some technical error found.
+    break
+  fi
+  echo -n $(( k-- ))' '
+  sleep 1
+done
