@@ -1,6 +1,5 @@
 import csv
 
-
 name = raw_input('Name: ')
 number = raw_input('Number: ')
 

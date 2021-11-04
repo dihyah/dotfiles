@@ -20,6 +20,3 @@ for pie, price in pizzas.items():
 
 for pie, price in pizzas.items():
 	print("A whole {} pizza costs ${}".format(pie, price))
-
-#if __name_ "__main__":
-	main()

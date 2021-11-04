@@ -170,7 +170,7 @@ done
 declare -p array
 '
 
-#Example to split a string using trim (tr) command
+#example to split a string using trim (tr) command
 my_str="We;welcome;you;on;javatpoint."
 my_arr=($(echo -n $my_str | tr ";" "\n"))
 

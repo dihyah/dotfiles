@@ -40,6 +40,7 @@ person.printNameArrow()
 person.printNameFunction()
 
 let meta = (output) => console.log(this);
+
 /*
 document.addEventListener('click', function() {
     console.log('Click')
