@@ -46,7 +46,7 @@ fi
 #case expression
 echo "Which Operating System are you using?"
 echo "Windows, Android, Chrome, Linux, Others?"
-read -p "Type your OS Name:" OS
+read -p "Type your OS Name: " OS
 
 case $OS in
     Windows|windows)
@@ -235,16 +235,35 @@ echo "${!example_array[@]} ${example_array[@]}"
 for (( i=0; i < $length; i++ )); do echo "$i: ${example_array[$i]}"; done
 echo ${sliced_array[@]}
 
-data=$(<sort.sh)
-echo "$data"
+#READ FILE
+chars=$(<sort.sh)
+echo "$chars"
 
 file='sort.sh'
-
 i=1
-while read line; do
+
+while read -r line; do
   echo "Line No. $i: $line"
   i=$((i+1))
 done < $file
+
+#WRITE FILE
+ls | tee -a script.sh && rm script.sh
+
+#CHECK FILE
+File='sort.sh'
+if [ -f "$File" ]; then 
+  echo "$File exist"; 
+else 
+  echo "$File does not exist"; 
+fi
+
+test -f 'sort.sh' && { echo "File exist"; echo "Task completed."; } || { echo "File does not exist"; echo "Exiting..."; }
 '
 
-while read -r line; do echo $line; done < sort.sh
+#CHECK DIRECTORY
+dir=../'bash'
+if [ -d "$dir" ]; then echo "$dir is a directory"; fi
+
+#CHECK VARIABLE -v (-z to check if variable not set equal to true)
+if [[ -v dir ]]; then echo "variable is set."; else echo "variable isn't set"; fi
