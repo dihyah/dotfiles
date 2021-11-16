@@ -168,12 +168,70 @@ while [[ $s ]]; do
   s=${s#*"$delimiter"}
 done
 declare -p array
-'
 
 #example to split a string using trim (tr) command
-my_str="We;welcome;you;on;javatpoint."
+my_str="This;is;bash;script."
 my_arr=($(echo -n $my_str | tr ";" "\n"))
 
 for s in "${my_arr[@]}"; do
   echo $s
 done
+
+#substring by range
+strsub="This is Bash"
+echo "Total characters in string: ${#str}"
+substr="${strsub:0:10}"
+echo "Substring: $substr"
+echo "Total characters in substring: ${#substr}"
+
+#substring from ith char and onwards
+strsub1="This is Bash"
+substr1="${strsub1:8}"
+echo $substr1
+
+#substring by single char
+strsub2="This is Bash"
+substr2="${strsub2:8:1}"
+echo $substr2
+
+#substring specific char to last
+strsub3="This is Bash substring."
+substr3="${strsub3:(7)}"
+echo $substr3
+
+#concat strings
+read -p "Name: " name
+read -p "State: " state
+read -p "Age: " age
+
+combine="$name, $state, $age"
+echo "Name, State, Age: $combine"
+
+print_it(){
+  local my_greet="This is function in Bash."
+  echo "$my_greet"
+}
+
+my_greet="$(print_it)"
+echo $my_greet
+
+#script to override existign commands using function
+echo(){
+  builtin echo -n `date +"%m-%d %H:%M:%S"` ": "
+  builtin echo $1
+}
+
+echo "This is Bash."
+'
+
+#arrays
+declare -a example_array=( "Ruby" "C" "Python" )
+example_array[3]="JavaScript"
+example_array+=( "Bash" "Lua" )
+unset example_array[4]
+length=${#example_array[@]}
+sliced_array=("${example_array[@]:1:3}")
+
+#echo "${!example_array[@]} ${example_array[@]}"
+#for (( i=0; i < $length; i++ )); do echo "$i: ${example_array[$i]}"; done
+echo ${sliced_array[@]}
