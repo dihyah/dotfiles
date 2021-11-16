@@ -222,7 +222,6 @@ echo(){
 }
 
 echo "This is Bash."
-'
 
 #arrays
 declare -a example_array=( "Ruby" "C" "Python" )
@@ -232,6 +231,20 @@ unset example_array[4]
 length=${#example_array[@]}
 sliced_array=("${example_array[@]:1:3}")
 
-#echo "${!example_array[@]} ${example_array[@]}"
-#for (( i=0; i < $length; i++ )); do echo "$i: ${example_array[$i]}"; done
+echo "${!example_array[@]} ${example_array[@]}"
+for (( i=0; i < $length; i++ )); do echo "$i: ${example_array[$i]}"; done
 echo ${sliced_array[@]}
+
+data=$(<sort.sh)
+echo "$data"
+
+file='sort.sh'
+
+i=1
+while read line; do
+  echo "Line No. $i: $line"
+  i=$((i+1))
+done < $file
+'
+
+while read -r line; do echo $line; done < sort.sh
