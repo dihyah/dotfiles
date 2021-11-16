@@ -1,11 +1,13 @@
 #!/bin/bash
 
-arr=("$@")
+arr=($@)
 
-if [ $# -eq 0 ]; then
-  echo Usage: ./sort.sh 3 2 1
+if [[ $# -lt 3 ]]; then
+  echo Number of arguments must not be less than three.
+  echo e.g. usage: ./sort.sh 10 25 80 55 39
 else
-  for arg in "${arr[@]}"; do
-    echo $arg
+  for i in ${arr[*]}; do
+    echo -n "$((i)) "
   done
 fi
+echo

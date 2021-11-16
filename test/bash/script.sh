@@ -236,10 +236,10 @@ for (( i=0; i < $length; i++ )); do echo "$i: ${example_array[$i]}"; done
 echo ${sliced_array[@]}
 
 #READ FILE
-chars=$(<sort.sh)
+chars=$(<script.sh)
 echo "$chars"
 
-file='sort.sh'
+file='script.sh'
 i=1
 
 while read -r line; do
@@ -251,14 +251,14 @@ done < $file
 ls | tee -a script.sh && rm script.sh
 
 #CHECK FILE
-File='sort.sh'
+File='script.sh'
 if [ -f "$File" ]; then 
   echo "$File exist"; 
 else 
   echo "$File does not exist"; 
 fi
 
-test -f 'sort.sh' && { echo "File exist"; echo "Task completed."; } || { echo "File does not exist"; echo "Exiting..."; }
+test -f 'script.sh' && { echo "File exist"; echo "Task completed."; } || { echo "File does not exist"; echo "Exiting..."; }
 '
 
 #CHECK DIRECTORY
