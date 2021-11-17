@@ -1,6 +1,6 @@
 #!/bin/bash
 
-: '
+:'
 #sleep interval
 date +"%H:%M:%S"
 echo "wait for 3 seconds"
