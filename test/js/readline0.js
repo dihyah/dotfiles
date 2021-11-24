@@ -1,11 +1,11 @@
-const readline = require('readline')
+const readline=require('readline')
 
-const rl = readline.createInterface(process.stdin, process.stdout)
+const rl=readline.createInterface(process.stdin, process.stdout)
 
-let num1 = Math.floor((Math.random() * 10 ) + 1)
-let num2 = Math.floor((Math.random() * 10 ) + 1)
+let num1=Math.floor((Math.random() * 10 ) + 1)
+let num2=Math.floor((Math.random() * 10 ) + 1)
 
-let ans = num1 + num2
+let ans=num1 + num2
 
 rl.question(`What is ${num1} + ${num2}? `, input => {
     if (input.trim() == ans) {
