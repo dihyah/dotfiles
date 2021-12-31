@@ -38,7 +38,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Set color theme
-colo gruvbox
+"colo gruvbox
 
 " Plugin Configs
 " Rainbow_parentheses
