@@ -3,45 +3,44 @@ hi Normal ctermfg=white ctermbg=black
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'simeji/winresizer'
 Plug 'markonm/traces.vim'
-Plug 'RRethy/vim-illuminate'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
-" fzf
-"let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8} }
+"fzf
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8} }
 let $FZF_DEFAULT_OPTS='--reverse'
 nnoremap <leader>gc :GCheckout<CR>
 
-" rainbow_parentheses
-"autocmd VimEnter * RainbowParentheses
+"rainbow_parenthesis
+autocmd VimEnter * RainbowParentheses
 
-" Easy Motion
+"easymotion
 map F <Plug>(easymotion-jumptoanywhere)
 map f <Plug>(easymotion-bd-f)
 
 syn off
 
-" Bracket Colored
+"color_brackets
 hi MatchParen cterm=bold ctermbg=white ctermfg=green
 
-" Tab to autocomplete
+"tab_to_autocomplete
 inoremap <expr> <Tab> pumvisible() ? "<C-y>" : "<Tab>"
 
-" Undo break points
+"undo_break_points
  inoremap , ,<c-g>u
  inoremap . .<c-g>u
  inoremap ! ! <c-g>u
  inoremap ? ?<c-g>u
  inoremap [ [<c-g>u
 
-" Moving text
+"moving_text
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 inoremap <C-j> <esc>:m .+1<CR>==
